@@ -1,6 +1,6 @@
 # https://docs.travis-ci.com/user/languages/java/
 language: java
-jdk: oraclejdk1.8
+jdk: oraclejdk9
 
 # Improve Build Speed https://dzone.com/articles/travis-ci-tutorial-java-projects
 cache:
@@ -9,8 +9,4 @@ cache:
 
 # Notifications https://docs.travis-ci.com/user/notifications/
 notifications:
-  email:
-    recipients:
-      - aurrum64@gmail.com
-    on_success: always # default: change
-    on_failure: always # default: always
+  email: false
