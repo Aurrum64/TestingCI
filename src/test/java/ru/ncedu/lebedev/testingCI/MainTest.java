@@ -1,18 +1,19 @@
 package ru.ncedu.lebedev.testingCI;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Method;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class MainTest {
 
     private static Object helloWorld;
     private static Method method = null;
 
-    @BeforeClass
+    @BeforeAll
     public static void setBeforeClass() {
         try {
             Class<?> clazz = Class.forName("ru.ncedu.lebedev.testingCI.Main");
@@ -33,10 +34,9 @@ public class MainTest {
     public void test() {
         try {
             String result = (String) method.invoke(helloWorld);
-            assertEquals("This is not hello world!", "Hello world!", result);
+            assertEquals("Hello world!", result);
         } catch (Exception e) {
             fail("Printing hello world error!");
         }
     }
-
 }
